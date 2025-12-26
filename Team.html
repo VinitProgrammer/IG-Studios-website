@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Team - IG Studios</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #0f0f0f;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    .team-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .quote {
+      font-size: 24px;
+      font-style: italic;
+      margin-bottom: 60px;
+      color: #f0f0f0;
+    }
+
+    .member {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      margin-bottom: 60px;
+    }
+
+    .member.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .member img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ff4444;
+      margin-bottom: 15px;
+    }
+
+    .member h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #ffffff;
+    }
+
+    .member p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #aaaaaa;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="our-team" class="team-section">
+    <div class="quote">“The people who created a gem.”</div>
+
+    <div class="member fade-in">
+      <img src="https://github.com/VinitProgrammer/IG-Studios-website/blob/main/WhatsApp%20Image%202025-12-26%20at%202.58.20%20PM.jpeg?raw=true"Vinit Kumar Mishra">
+      <h3>Vinit Kumar Mishra</h3>
+      <p>Founder of IG Studios</p>
+    </div>
+
+    <div class="member fade-in">
+      <img src="https://github.com/VinitProgrammer/IG-Studios-website/blob/main/WhatsApp%20Image%202025-12-26%20at%202.44.52%20PM.jpeg?raw=true"Co-Founder">
+      <h3>Abhishek Kumar Mishra</h3>
+      <p>Co-Founder</p>
+    </div>
+
+    <div class="member fade-in">
+      <img src="https://github.com/VinitProgrammer/IG-Studios-website/blob/main/5700c04197ee9a4372a35ef16eb78f4e.jpg?raw=true"Promoter">
+      <h3>Shreyansh Raj</h3>
+      <p>Promoter</p>
+    </div>
+
+    <div class="member fade-in">
+      <img src="https://github.com/VinitProgrammer/IG-Studios-website/blob/main/5700c04197ee9a4372a35ef16eb78f4e.jpg?raw=true"Team Member">
+      <h3>Kumar Chandan</h3>
+      <p>Crew Member</p>
+    </div>
+
+    <div class="member fade-in">
+      <img src="https://github.com/VinitProgrammer/IG-Studios-website/blob/main/WhatsApp%20Image%202025-12-26%20at%203.06.27%20PM.jpeg?raw=true"Financial Manager">
+      <h3>Saksham Vidhu Pandey</h3>
+      <p>Financial Manager</p>
+    </div>
+
+    <div class="member fade-in">
+      <img src="https://github.com/VinitProgrammer/IG-Studios-website/blob/main/WhatsApp%20Image%202025-12-26%20at%202.58.20%20PM.jpeg?raw=true"Developer">
+      <h3>Vinit Kumar Mishra</h3>
+      <p>Game Developer</p>
+    </div>
+  </section>
+
+  
+
+  <script>
+    const members = document.querySelectorAll('.member');
+
+    const showOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.9;
+      members.forEach(member => {
+        const memberTop = member.getBoundingClientRect().top;
+        if (memberTop < triggerBottom) {
+          member.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+  </script>
+
+</body>
+</html>
