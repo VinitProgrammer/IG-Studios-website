@@ -1,72 +1,168 @@
-<!doctype html>
+<!doctype html> <html lang="en"> <head><!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XFRZC0LL9"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-5XFRZC0LL9'); </script><!doctype html>
 <html lang="en">
 
-<head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XFRZC0LL9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Store</title>
+<link rel="stylesheet" href="styles.css">
 
-  gtag('config', 'G-5XFRZC0LL9');
-</script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Store</title>
-  <link rel="stylesheet" href="styles.css">
+<style>
+
+/* MODAL STYLING */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+}
+
+.modal-content {
+  background: #0f0f0f;
+  padding: 30px;
+  width: 380px;
+  margin: 12% auto;
+  border-radius: 14px;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8);
+}
+
+.platform-btn {
+  display: block;
+  margin: 18px 0;
+  padding: 14px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.gumroad {
+  background: #ff90e8;
+  color: black;
+}
+
+.gumroad:hover {
+  transform: scale(1.05);
+}
+
+.indiedb {
+  background: #e53935;
+  color: white;
+}
+
+.indiedb:hover {
+  transform: scale(1.05);
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+</style>
+
 </head>
 
 <body>
-  <header class="site-header">
-   <img src="https://github.com/VinitProgrammer/UrbanX-website/blob/main/IG%20Studios%20new%20logo-fotor-bg-remover-20251111233028.png?raw=true"
-    width="100px"
-     height="100px">
+
+<header class="site-header">
+  <img src="https://github.com/VinitProgrammer/UrbanX-website/blob/main/IG%20Studios%20new%20logo-fotor-bg-remover-20251111233028.png?raw=true"
+  width="100px" height="100px">
     
-    <nav class="nav"><a href="index.html">Home</a><a href="store.html">Store</a><a href="trailers.html">Trailers</a><a
-        href="index.html#contact">Contact</a></nav>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="store.html">Store</a>
+    <a href="trailers.html">Trailers</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
 
-  </header>
+<main style="padding-top:96px">
 
-  <main style="padding-top:96px">
-    <section class="section" id="store-section">
-      <div class="section-inner">
-        <h2>Store</h2>
-        <p class="lead">Buy Urban X and get ready to rule the streets on launch day.</p>
-        <div class="games-grid">
-          <article class="game-card">
-            <img src="https://github.com/VinitProgrammer/UrbanX-website/blob/main/d4bfb24a-6769-43ab-83d7-33d631888aad.png?raw=true"
-              alt="Urban X">
-            <div class="game-body">
-              <h3>Urban X: The Beginning</h3>
-              <p class="muted">Chaos meets control in a living city.</p>
-              <div class="meta">
-                <div class="price">Free</div>
-               <a class="btn primary" href="https://igstudios4.gumroad.com/l/brokx">Buy Now</a
-                </div>
-              </div>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="section" id="store-section">
+<div class="section-inner">
+<h2>Store</h2>
+<p class="lead">Buy Urban X and get ready to rule the streets on launch day.</p>
 
-  
-<?php
-$file = "downloads.txt";
-$count = file_exists($file) ? (int)file_get_contents($file) : 0;
-$count++;
-file_put_contents($file, $count);
-echo $count;
-?>
+<div class="games-grid">
 
+<article class="game-card">
+<img src="https://github.com/VinitProgrammer/UrbanX-website/blob/main/d4bfb24a-6769-43ab-83d7-33d631888aad.png?raw=true" alt="Urban X">
 
-    </section>
+<div class="game-body">
+<h3>Urban X: The Beginning</h3>
+<p class="muted">Chaos meets control in a living city.</p>
 
-    <section class="section" id="contact">
-      <div class="section-inner">
-        <h2>Contact</h2>
-        <p class="lead">Email: <a href="mailto:igstudiosofficial1@gmail.com">igstudiosofficial1@gmail.com</a></p>
-      </div>
-    </section>
-  </main>
+<div class="meta">
+<div class="price">Free</div>
 
-  <footer class="footer">© Indian Games Studios</footer>
+<button class="btn primary" onclick="openBuyOptions()">Buy Now</button>
+
+</div>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- BUY MODAL -->
+<div id="buyModal" class="modal">
+<div class="modal-content">
+<span class="close" onclick="closeBuyOptions()">&times;</span>
+<h3>Select Platform</h3>
+
+<a href="https://igstudios4.gumroad.com/l/brokx" target="_blank" class="platform-btn gumroad">
+Buy via Gumroad
+</a>
+
+<a href="https://www.indiedb.com/games/urban-x-the-beginning" target="_blank" class="platform-btn indiedb">
+Download via IndieDB
+</a>
+
+</div>
+</div>
+
+<section class="section" id="contact">
+<div class="section-inner">
+<h2>Contact</h2>
+<p class="lead">Email: <a href="mailto:igstudiosofficial1@gmail.com">igstudiosofficial1@gmail.com</a></p>
+</div>
+</section>
+
+</main>
+
+<footer class="footer">© Indian Games Studios</footer>
+
+<script>
+
+function openBuyOptions() {
+  document.getElementById("buyModal").style.display = "block";
+}
+
+function closeBuyOptions() {
+  document.getElementById("buyModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+  let modal = document.getElementById("buyModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+</body>
+</html>
