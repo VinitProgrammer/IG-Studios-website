@@ -1,3 +1,88 @@
+/* =========================================
+   IG STUDIOS WELCOME HERO
+========================================= */
+
+.studio-tagline {
+  font-family: "Arial", sans-serif;
+  font-size: 13px;
+  letter-spacing: 6px;
+  color: #00e5ff;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.welcome-title {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: clamp(50px, 8vw, 110px);
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: -3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow:
+    0 0 20px rgba(0, 229, 255, 0.25);
+}
+
+.welcome-title span {
+  display: block;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #00e5ff;
+  margin-top: 10px;
+  text-shadow:
+    0 0 15px rgba(0, 229, 255, 0.5),
+    0 0 40px rgba(0, 100, 255, 0.25);
+}
+
+.welcome-subtitle {
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: #d8b4fe;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+/* BUTTONS */
+
+.explore-btn {
+  background: #00e5ff;
+  color: #061018;
+  border: 2px solid #00e5ff;
+  font-weight: 800;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #061018;
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.projects-btn {
+  color: #d8b4fe;
+  border: 2px solid #d8b4fe;
+  background: transparent;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.projects-btn:hover {
+  background: #d8b4fe;
+  color: #140b20;
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 20px rgba(216, 180, 254, 0.4);
+}
 /* Styles for Urban X multi-page site (dark, cinematic, neon accent) */
 :root{
   --bg:#040404; --muted:#9aa0a6; --accent:#d7263d; --glass: rgba(255,255,255,0.03);
