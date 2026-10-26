@@ -917,20 +917,10 @@ footer a:hover {
             <div>
                 <div class="eyebrow">ENCRYPTED CHECKOUT</div>
                 <h2>Get JARVIS 1.0</h2>
-                <p>Choose your preferred checkout platform.</p>
+                <p>Complete your purchase securely through Gumroad.</p>
             </div>
             <button class="close" onclick="closePurchase()" aria-label="Close checkout">×</button>
         </div>
-
-        <!-- PAYHIP -->
-        <a class="gumroad-card"
-           href="https://payhip.com/b/K3OsU"
-           target="_blank"
-           rel="noopener noreferrer">
-            <h3>Download via Payhip</h3>
-            <p>Complete checkout through Payhip and receive your JARVIS download.</p>
-            <span class="purchase-button">PROCEED WITH PAYHIP →</span>
-        </a>
 
         <!-- GUMROAD -->
         <a class="gumroad-card"
@@ -946,7 +936,7 @@ footer a:hover {
 </div>
 
 <script>
-// --- SINGLE CHECKOUT MODAL FOR BOTH BUTTONS ---
+// --- SINGLE GUMROAD CHECKOUT MODAL ---
 const modal = document.getElementById("purchaseModal");
 
 function openPurchase() {
